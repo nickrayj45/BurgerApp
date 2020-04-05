@@ -1,0 +1,12 @@
+.jumbotron {
+  background: tan;
+  background-image: url("./images.png");
+}
+
+.h1 {
+  text-align: center;
+}
+
+.ul {
+  text-align: center;
+}

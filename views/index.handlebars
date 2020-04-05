@@ -1,6 +1,18 @@
-<h1>The Burger App</h1>
+
+<h1 class="h1">The Burger App</h1>
 
 <h2>Burgers</h2>
 
-<ul>Types of Burgers</ul>
-  {{#each burgers}}
+<ul class="ul">Types of Burgers</ul>
+{{#each burger_data}}
+
+<div>
+  {{this.id}}.
+  {{this.burgers}}
+</div>
+{{/each}}
+
+<h2>Devoured</h2>
+
+{{!-- <input>Type in Burger</input>
+<button>Search</button> --}}
