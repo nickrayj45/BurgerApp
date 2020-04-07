@@ -1,18 +1,51 @@
-
-<h1 class="h1">The Burger App</h1>
-
-<h2>Burgers</h2>
-
-<ul class="ul">Types of Burgers</ul>
-{{#each burger_data}}
-
-<div>
-  {{this.id}}.
-  {{this.burgers}}
+<div class="header">
+  <img src="assets/img/images.png" alt="burgers" class="image">
 </div>
-{{/each}}
 
-<h2>Devoured</h2>
 
-{{!-- <input>Type in Burger</input>
-<button>Search</button> --}}
+<h1>The Burger App!</h1>
+
+<h2>Burgers Not Devoured</h2>
+
+<ul>
+  {{#each burger}}
+  {{#unless this.devoured}}
+  <li>
+    {{this.burger_type}} {{this.id}}
+    <button class="change-devour button" data-id="{{this.id}}" data-newdevour="true">
+      Devour!
+    </button>
+  </li>
+  {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Burgers Devoured!</h2>
+
+<ul>
+  {{#each burgers}}
+  {{#if devoured}}
+  <li>
+    {{burger_type}}
+  </li>
+  {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Add a Burger</h2>
+<form class="create-form" action="/burgers/new" method="POST">
+
+  <div class="form-group">
+    <label for="burgers">Burger Type:</label>
+    <input type="text" id="burger_type" name="name">
+  </div>
+
+  {{!-- <div class="form-group">
+    <label for="slee">Sleepy?</label><br>
+    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
+    <input type="radio" name="sleepy" value="0"> Awake
+  </div> --}}
+
+  <button type="submit">Add Burger</button>
+
+</form>

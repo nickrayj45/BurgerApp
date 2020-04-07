@@ -1,7 +1,9 @@
 .jumbotron {
   background: tan;
-  background-image: url("./images.png");
+  
 }
+
+/* #burger_type */
 
 .h1 {
   text-align: center;
